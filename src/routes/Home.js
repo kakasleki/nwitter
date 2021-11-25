@@ -26,7 +26,7 @@ const Home = ({ userObj }) => {
             const attachmentRef = storageService
                 .ref()
                 .child(`${userObj.uid}/${uuidv4()}`);
-            const response = await attachmentRef.putString(attachmemt);
+            const response = await attachmentRef.putString(attachmemt, "data_url");
             attachmentUrl = await response.ref.getDownloadURL();
         }
 
